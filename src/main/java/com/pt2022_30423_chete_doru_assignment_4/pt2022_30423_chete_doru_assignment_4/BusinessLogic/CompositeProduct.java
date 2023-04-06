@@ -14,9 +14,9 @@ public class CompositeProduct extends MenuItem {
     private int fat;
     private int sodium;
     private int price;
-    private List<BaseProduct> containedProducts;
+    private List<CompositeProduct> containedProducts;
 
-    public CompositeProduct(int id, String title, double rating, int calories, int protein, int fat, int sodium, int price, List<BaseProduct> containedProducts) {
+    public CompositeProduct(int id, String title, double rating, int calories, int protein, int fat, int sodium, int price, List<CompositeProduct> containedProducts) {
         this.id = id;
         this.title = title;
         this.rating = rating;
@@ -108,11 +108,11 @@ public class CompositeProduct extends MenuItem {
         this.price = price;
     }
 
-    public List<BaseProduct> getContainedProducts() {
+    public List<CompositeProduct> getContainedProducts() {
         return containedProducts;
     }
 
-    public void setContainedProducts(List<BaseProduct> containedProducts) {
+    public void setContainedProducts(List<CompositeProduct> containedProducts) {
         this.containedProducts = containedProducts;
     }
 }
