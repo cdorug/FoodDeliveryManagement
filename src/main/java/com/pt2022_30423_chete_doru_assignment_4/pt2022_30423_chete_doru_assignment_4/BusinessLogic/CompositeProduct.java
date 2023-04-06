@@ -28,91 +28,21 @@ public class CompositeProduct extends MenuItem {
         this.containedProducts = containedProducts;
     }
 
-    @Override
-    public int getId() {
-        return id;
+    public void addProduct(CompositeProduct product) {
+        containedProducts.add(product);
     }
-
-    @Override
-    public void setId(int id) {
-        this.id = id;
+    
+    public void setRating(int rating) {
+        for(CompositeProduct product: containedProducts) {
+            product.setRating(rating);
+        }
     }
-
-    @Override
-    public String getTitle() {
-        return title;
-    }
-
-    @Override
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    @Override
-    public double getRating() {
-        return rating;
-    }
-
-    @Override
-    public void setRating(double rating) {
-        this.rating = rating;
-    }
-
-    @Override
-    public int getCalories() {
-        return calories;
-    }
-
-    @Override
-    public void setCalories(int calories) {
-        this.calories = calories;
-    }
-
-    @Override
-    public int getProtein() {
-        return protein;
-    }
-
-    @Override
-    public void setProtein(int protein) {
-        this.protein = protein;
-    }
-
-    @Override
-    public int getFat() {
-        return fat;
-    }
-
-    @Override
-    public void setFat(int fat) {
-        this.fat = fat;
-    }
-
-    @Override
+    
     public int getSodium() {
-        return sodium;
+        int sodium = 0;
+        for(CompositeProduct product: containedProducts) {
+            soidum += product.
+        }
     }
 
-    @Override
-    public void setSodium(int sodium) {
-        this.sodium = sodium;
-    }
 
-    @Override
-    public int getPrice() {
-        return price;
-    }
-
-    @Override
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public List<CompositeProduct> getContainedProducts() {
-        return containedProducts;
-    }
-
-    public void setContainedProducts(List<CompositeProduct> containedProducts) {
-        this.containedProducts = containedProducts;
-    }
-}
