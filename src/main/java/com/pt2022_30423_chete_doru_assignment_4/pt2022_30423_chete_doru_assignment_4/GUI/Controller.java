@@ -102,13 +102,14 @@ public class Controller {
     ArrayList<MenuItem> currentItemsInBasket = new ArrayList<>();
     ArrayList<BaseProduct> currentItemsInNewMenu = new ArrayList<>();
     Serializator serializator = new Serializator();
-    DeliveryService deliveryService = new DeliveryService();
+    private final IDeliveryService deliveryService;
     String currentLoggedUser = "";
     String currentLoggedUserRole = "";
 
     int currentOrderPrice = 0;
 
-    public Controller() throws IOException, ClassNotFoundException {
+    public Controller(IDeliveryService service) throws IOException, ClassNotFoundException {
+        deliveryService = service;
         deliveryService.users = serializator.deserializeUsers();
         System.out.println("ALL USERS: ");
         for(User u: deliveryService.users) {
